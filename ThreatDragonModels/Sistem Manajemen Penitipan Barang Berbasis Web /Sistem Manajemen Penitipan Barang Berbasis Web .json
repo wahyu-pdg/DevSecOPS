@@ -62,7 +62,8 @@
               "crossingFlows": [
                 "9066c27b-ba11-4b00-969e-d7a178fc165d",
                 "d7bb5223-e909-4543-8353-279fb6510a40",
-                "dd7e0604-39dc-411b-a0d2-80e6c3d9ec62"
+                "dd7e0604-39dc-411b-a0d2-80e6c3d9ec62",
+                "aa3adb0e-caff-46d7-9a8b-2984f8539cbe"
               ],
               "containedElements": [
                 "da0702e8-8546-41d4-8f8c-7f6cd112f40b",
@@ -1392,19 +1393,21 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "bb4f4a77-c511-4ff5-93e4-b8441462ddcb"
+              ]
             },
             "labels": [
               "Send Email\nEmail Statu"
             ],
             "id": "aa3adb0e-caff-46d7-9a8b-2984f8539cbe",
             "source": {
-              "x": 1261,
-              "y": 510
+              "cell": "64d246fb-b648-4202-a6a1-c00b1b0270c4",
+              "port": "8a513e5a-b503-4765-93d1-f6378b027c2b"
             },
             "target": {
-              "x": 1361,
-              "y": 610
+              "cell": "e69d2977-3834-4bae-a5df-fbe9bb78d5ee",
+              "port": "75364f4e-558a-450d-bf3e-bd8afee610d4"
             }
           },
           {

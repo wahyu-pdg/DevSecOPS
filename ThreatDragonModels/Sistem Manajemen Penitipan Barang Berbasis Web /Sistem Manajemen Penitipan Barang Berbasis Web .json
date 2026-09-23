@@ -51,8 +51,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "bb4f4a77-c511-4ff5-93e4-b8441462ddcb",
             "zIndex": -1,
+            "id": "bb4f4a77-c511-4ff5-93e4-b8441462ddcb",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Trust Boundary - Sistem Aplikasi",
@@ -61,7 +61,8 @@
               "hasOpenThreats": false,
               "crossingFlows": [
                 "9066c27b-ba11-4b00-969e-d7a178fc165d",
-                "d7bb5223-e909-4543-8353-279fb6510a40"
+                "d7bb5223-e909-4543-8353-279fb6510a40",
+                "dd7e0604-39dc-411b-a0d2-80e6c3d9ec62"
               ],
               "containedElements": [
                 "da0702e8-8546-41d4-8f8c-7f6cd112f40b",
@@ -94,6 +95,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -177,7 +179,6 @@
               ]
             },
             "id": "a03804bf-84fa-45ed-9e2e-d10543b032c7",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Customer",
@@ -211,6 +212,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -304,8 +306,7 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
-            },
-            "zIndex": 2
+            }
           },
           {
             "position": {
@@ -328,6 +329,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -421,8 +423,7 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
-            },
-            "zIndex": 3
+            }
           },
           {
             "position": {
@@ -445,6 +446,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -538,8 +540,7 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
-            },
-            "zIndex": 4
+            }
           },
           {
             "position": {
@@ -562,6 +563,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -645,7 +647,6 @@
               ]
             },
             "id": "da0702e8-8546-41d4-8f8c-7f6cd112f40b",
-            "zIndex": 5,
             "data": {
               "type": "tm.Process",
               "name": "React\nFrontend",
@@ -682,6 +683,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 6,
             "ports": {
               "groups": {
                 "top": {
@@ -765,7 +767,6 @@
               ]
             },
             "id": "9fa64d11-c014-4d90-9211-69394603a014",
-            "zIndex": 6,
             "data": {
               "type": "tm.Process",
               "name": "Admin\nPanel \n(web)",
@@ -802,6 +803,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 7,
             "ports": {
               "groups": {
                 "top": {
@@ -885,7 +887,6 @@
               ]
             },
             "id": "64d246fb-b648-4202-a6a1-c00b1b0270c4",
-            "zIndex": 7,
             "data": {
               "type": "tm.Process",
               "name": "Node.js\nREST API",
@@ -925,6 +926,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 9,
             "ports": {
               "groups": {
                 "top": {
@@ -1022,8 +1024,7 @@
               "storesCredentials": false,
               "storesInventory": false,
               "threats": []
-            },
-            "zIndex": 9
+            }
           },
           {
             "shape": "flow",
@@ -1321,7 +1322,7 @@
                   "name": "block"
                 },
                 "sourceMarker": {
-                  "name": ""
+                  "name": "block"
                 },
                 "strokeDasharray": null
               }
@@ -1332,13 +1333,61 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "ads",
+              "name": "Payment Request\nPayment Status",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
-              "isBidirectional": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "bb4f4a77-c511-4ff5-93e4-b8441462ddcb"
+              ]
+            },
+            "labels": [
+              "Payment Request\nPayment Status"
+            ],
+            "id": "dd7e0604-39dc-411b-a0d2-80e6c3d9ec62",
+            "source": {
+              "cell": "64d246fb-b648-4202-a6a1-c00b1b0270c4",
+              "port": "8a513e5a-b503-4765-93d1-f6378b027c2b"
+            },
+            "target": {
+              "cell": "5a0ed002-c288-40b8-9e40-3ec1e31d1cce",
+              "port": "75364f4e-558a-450d-bf3e-bd8afee610d4"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Send Email\nEmail Statu",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
@@ -1346,16 +1395,16 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "ads"
+              "Send Email\nEmail Statu"
             ],
-            "id": "dd7e0604-39dc-411b-a0d2-80e6c3d9ec62",
+            "id": "aa3adb0e-caff-46d7-9a8b-2984f8539cbe",
             "source": {
-              "x": 1061,
-              "y": 265
+              "x": 1261,
+              "y": 510
             },
             "target": {
-              "x": 1161,
-              "y": 365
+              "x": 1361,
+              "y": 610
             }
           },
           {
@@ -1382,6 +1431,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 11,
             "ports": {
               "groups": {
                 "top": {
@@ -1479,8 +1529,7 @@
               "storesCredentials": false,
               "storesInventory": false,
               "threats": []
-            },
-            "zIndex": 11
+            }
           },
           {
             "position": {
@@ -1498,8 +1547,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "d5d6974d-5ced-4ba5-9838-19639b028bb0",
             "zIndex": 12,
+            "id": "d5d6974d-5ced-4ba5-9838-19639b028bb0",
             "data": {
               "type": "tm.Text",
               "name": "Read/Write Data",

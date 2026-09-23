@@ -189,7 +189,25 @@
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "ec796811-00d8-446a-ad66-3b665324a02e",
+                  "title": "Account Impersonation",
+                  "status": "Eliminated",
+                  "severity": "Critical",
+                  "type": "Spoofing",
+                  "description": "Penyerang menyamar sebagai pengguna",
+                  "mitigation": "Sistem harus menggunakan HTTPS untuk seluruh komunikasi",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -423,7 +441,25 @@
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "dbf6a6cd-dda5-40e0-8605-2e083a50ba07",
+                  "title": "Payment Data Tampering",
+                  "status": "Accepted",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Data pembayaran dimodifikasi sebelum diproses",
+                  "mitigation": "Sistem harus mencatat aktivitas penting dalam audit log",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -780,7 +816,29 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "b7a3653e-8b2a-4819-bc1d-1a10538c173c",
+                  "title": "Privilege Escalation",
+                  "status": "Eliminated",
+                  "severity": "Critical",
+                  "type": "Elevation of privilege",
+                  "description": "Pengguna biasa memperoleh hak akses admin",
+                  "mitigation": "Sistem harus menerapkan RBAC untuk membatasi akses admin",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -900,7 +958,55 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "7db5c5d0-4143-4b9d-bbe8-78c91ca5f64b",
+                  "title": "Data Tampering",
+                  "status": "Accepted",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Data request dimodifikasi oleh penyerang",
+                  "mitigation": "Sistem harus menerapkan RBAC untuk membatasi akses admin",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                },
+                {
+                  "id": "b4e72b20-6b0e-4c66-97e9-ebeb5a9e1c0b",
+                  "title": "Transaction Repudiation",
+                  "status": "Transferred",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "Pengguna menyangkal telah melakukan transaksi",
+                  "mitigation": "Sistem harus menerapkan RBAC untuk membatasi akses admin",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                },
+                {
+                  "id": "7312c940-f2b6-499f-acc8-20d8f426b8ec",
+                  "title": "API Flooding / DoS",
+                  "status": "Avoided",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "API dibanjiri request hingga layanan terganggu",
+                  "mitigation": "Sistem harus menerapkan RBAC untuk membatasi akses admin",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -1057,10 +1163,29 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "93e99b2a-912b-4c5d-9a85-3b1b5fd44076",
+                  "title": "Credential Theft",
+                  "status": "Eliminated",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "Kredensial pengguna dicuri",
+                  "mitigation": "Password pengguna harus disimpan menggunakan hasting yang aman",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "bb4f4a77-c511-4ff5-93e4-b8441462ddcb"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Registrasi/Login\nData Diri"
@@ -1360,7 +1485,8 @@
             "target": {
               "cell": "5a0ed002-c288-40b8-9e40-3ec1e31d1cce",
               "port": "75364f4e-558a-450d-bf3e-bd8afee610d4"
-            }
+            },
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -1531,7 +1657,27 @@
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "c1d836c1-79db-4261-88ed-45186c153a04",
+                  "title": "Data Leakage",
+                  "status": "Accepted",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Data sensitif dapat bocor atau diakses pihak tidak berwenang",
+                  "mitigation": "Sistem harus menerapkan rate limiting pada API",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 2,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -1563,6 +1709,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 9
   }
 }
